@@ -12,7 +12,7 @@ angular.module('app', ['rx'])
       };
     }
 
-    function searchLastFm(username) {
+    function getTopAlbumsForUser(username) {
       return Rx.Observable.fromPromise(Lastfm.getTopAlbums(username));
     }
 
@@ -20,7 +20,9 @@ angular.module('app', ['rx'])
       var result = [];
 
       angular.forEach(albums, function (albumInfo) {
-        result.push(new Album(albumInfo.name, albumInfo.playcount, albumInfo.image[3]['#text']));
+        var album = new Album();
+        album.fromLastfmAlbumInfo(albumInfo);
+        result.push(album);
       });
 
       return result;
@@ -71,9 +73,10 @@ angular.module('app', ['rx'])
       })
       .debounce(400)
       .distinctUntilChanged()
-      .select(searchLastFm)
+      .select(getTopAlbumsForUser)
       .switchLatest(); // preserve ordering - some requests can take more time to complete
 
+    // stream containing the album information from LastFm
     albumStream(lastFmResponseStream)
       .map(mapAlbumsToModels)
       .subscribe(function (albums) {
@@ -81,6 +84,7 @@ angular.module('app', ['rx'])
         $scope.albums = albums;
       });
 
+    // stream returning possible errors from LastFm
     errorStream(lastFmResponseStream)
       .subscribe(function (error) {
         $scope.albums = [];

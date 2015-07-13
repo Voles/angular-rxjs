@@ -1,10 +1,15 @@
 angular.module('app')
   .factory('Album', [function () {
-    // TODO: correct creation of Album instances
-    var Album = function (name, playcount, image) {
+    function Album(name, playcount, image) {
       this.name = name;
       this.playcount = playcount;
       this.image = image;
+    }
+
+    Album.prototype.fromLastfmAlbumInfo = function (albumInfo) {
+      this.name = albumInfo.name;
+      this.playcount = albumInfo.playcount;
+      this.image = albumInfo.image[3]['#text'];
     };
 
     return Album;
