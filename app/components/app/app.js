@@ -1,4 +1,4 @@
-angular.module('app', ['rx'])
+angular.module('app')
   .controller('AppCtrl', ['$scope', '$http', '$location', 'Album', 'Lastfm', function ($scope, $http, $location, Album, Lastfm) {
     var submitFormObservable,
       inputObservable,
