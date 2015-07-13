@@ -1,5 +1,5 @@
 angular.module('app', ['rx'])
-  .controller('AppCtrl', ['$scope', '$http', '$location', 'Album', function ($scope, $http, $location, Album) {
+  .controller('AppCtrl', ['$scope', '$http', '$location', 'Album', 'Lastfm', function ($scope, $http, $location, Album, Lastfm) {
     var submitFormObservable,
       inputObservable,
       lastFmResponseStream;
@@ -13,12 +13,7 @@ angular.module('app', ['rx'])
     }
 
     function searchLastFm(username) {
-      var promise = $http({
-        url: 'http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=' + username + '&api_key=de796dc0e5687dd2b3054eea82c4ac83&format=json',
-        method: 'GET'
-      });
-
-      return Rx.Observable.fromPromise(promise);
+      return Rx.Observable.fromPromise(Lastfm.getTopAlbums(username));
     }
 
     function mapAlbumsToModels(albums) {
