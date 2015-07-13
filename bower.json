@@ -1,0 +1,7 @@
+{
+  "name": "angular-rxjs",
+  "dependencies": {
+    "angular": "~1.4.2",
+    "angular-rx": "~0.0.14"
+  }
+}
