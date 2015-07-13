@@ -25,3 +25,8 @@ Run the command below in the project root directory.
 
 ## Build instructions
 To run the application server, run `$ http-server app` inside the project's root directory.
+
+## Deploy online demo
+
+    $ gulp deploy
+    
