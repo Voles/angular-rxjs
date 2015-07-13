@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-lg-12">
+    <form name="searchform" ng-submit="search(searchform.query.username)">
+      <div class="form-group">
+        <label for="username">Last.fm username</label>
+        <input type="text" id="username" placeholder="Eg. vol-es" class="form-control" ng-model="query.username" ng-change="search(query.username)">
+        <span class="help-block">No Last.fm account? Try username <a ng-href="#?username=vol-es">vol-es</a>.</span>
+      </div>
+    </form>
+
+    <p ng-show="error" ng-bind="error.message"></p>
+  </div>
+</div>
+
+<div class="row marketing">
+  <album-list albums="albums"></album-list>
+</div>

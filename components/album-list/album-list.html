@@ -1,0 +1,14 @@
+<div class="col-lg-6 left-column nopadding">
+  <div ng-repeat="album in albums" ng-show="$even" ng-cloak="" class="album animated fadeInDown">
+    <h4 ng-bind="album.name" class="title"></h4>
+    <img ng-src="{{album.image}}" alt="{{album.name}}">
+  </div>
+</div>
+
+<div class="col-lg-6 right-column nopadding">
+  <div ng-repeat="album in albums" ng-show="$odd" ng-cloak="" class="album animated fadeInDown">
+    <h4 ng-bind="album.name" class="title"></h4>
+    <img ng-src="{{album.image}}" alt="{{album.name}}">
+  </div>
+</div>
+

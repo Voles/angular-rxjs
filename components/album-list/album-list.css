@@ -1,0 +1,33 @@
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.album img {
+    width: 100%;
+}
+
+.album .title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    max-width: 90%;
+}
+
+.left-column .album:nth-child(1n) {
+    animation-delay: 0.25s;
+}
+
+.left-column .album:nth-child(3n) {
+    animation-delay: 0.55s;
+}
+
+.right-column .album:nth-child(2n) {
+    animation-delay: 0.35s;
+}
+
+.right-column .album:nth-child(4n) {
+    animation-delay: 0.75s;
+}
