@@ -1,4 +1,4 @@
-# angular-rxjs
+# RxJS with Angular
 An experiment using [RxJS](http://reactivex.io/) with Angular.
 
 #### Prerequisites
