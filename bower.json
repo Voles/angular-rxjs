@@ -3,6 +3,8 @@
   "dependencies": {
     "angular": "~1.4.2",
     "angular-rx": "~0.0.14",
-    "angular-route": "~1.4.2"
+    "angular-route": "~1.4.2",
+    "bootstrap": "~3.3.5",
+    "animate.css": "~3.3.0"
   }
 }

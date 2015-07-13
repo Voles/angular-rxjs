@@ -3,6 +3,11 @@ angular.module('app', ['rx', 'ngRoute'])
     $routeProvider
       .when('/', {
         controller: 'AppCtrl',
-        templateUrl: 'components/app/app.html'
+        templateUrl: 'components/app/app.html',
+        reloadOnSearch: false
+      })
+      .otherwise({
+        redirectTo: '/'
       });
+
   }]);

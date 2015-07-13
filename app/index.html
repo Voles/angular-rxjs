@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <title>Angular RxJS example</title>
 
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/animate.css/animate.css">
+
+  <link rel="stylesheet" href="components/app/app.css">
+  <link rel="stylesheet" href="components/album-list/album-list.css">
+
   <style>
     [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
       display: none !important;
@@ -12,15 +18,36 @@
 </head>
 <body ng-app="app">
 
-  <div ng-controller="AppCtrl">
-    <form name="searchform" ng-submit="search(searchform.query.username)">
-      <input type="text" ng-model="query.username" ng-change="search(query.username)">
-    </form>
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="active"><a ng-href="#/">Home</a></li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">RxJS &amp; Angular experiment</h3>
+    </div>
 
-    <p ng-show="error" ng-bind="error.message"></p>
+    <div class="jumbotron">
+      <h1>My Last.fm albums</h1>
+      <p class="lead">
+        This website is a personal experiment to work with <a href="https://github.com/Reactive-Extensions/RxJS" target="_blank">RxJS</a> in combination with <a href="https://angularjs.org/" target="_blank">Angular</a>.
+        Fill in your Last.fm username and see your favourite album covers.
+      </p>
+      <p><a class="btn btn-lg btn-success" href="https://github.com/Voles/angular-rxjs" role="button" target="_blank">Source on GitHub</a></p>
+    </div>
 
-    <album-list albums="albums"></album-list>
-  </div>
+    <ng-view></ng-view>
+
+    <footer class="footer">
+      <p>By <a href="https://github.com/Voles" target="_blank">Niels Dequeker</a></p>
+    </footer>
+
+  </div> <!-- /container -->
+
+
+
+    <!--<album-list albums="albums"></album-list>-->
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
