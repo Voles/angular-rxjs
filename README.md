@@ -1,16 +1,17 @@
 # angular-rxjs
 An experiment using [RxJS](http://reactivex.io/) with Angular.
 
-####Prerequisites
+#### Prerequisites
 
 * [Node Package Manager](https://npmjs.org/) (NPM)
 * [Git](http://git-scm.com/)
 
 *Note: [installation instructions for NodeJS on Ubuntu](http://stackoverflow.com/questions/16302436/install-nodejs-on-ubuntu-12-10/16303380#16303380)*
 
-####Dependencies
+#### Dependencies
 
 * [http-server](https://github.com/indexzero/http-server)
+* [Gulp](http://gulpjs.com/)
 
 ## Environment setup
 ####1. Install http-server
