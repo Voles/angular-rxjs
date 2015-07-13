@@ -3,7 +3,7 @@ angular.module('app')
     return {
       getTopAlbums: function (username) {
         return $http({
-          url: 'http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=' + username + '&api_key=de796dc0e5687dd2b3054eea82c4ac83&format=json',
+          url: 'http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=' + username + '&api_key=3db2001ed34ece662b280fd5e2b7fbb8&format=json',
           method: 'GET'
         });
       }
