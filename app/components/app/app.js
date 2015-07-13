@@ -54,7 +54,7 @@ angular.module('app')
     // update query parameter when the URL changes
     $scope.$on('$locationChangeSuccess', setQueryFromTheUrl);
 
-    // create an observable from the search method
+    // create an observable for the $scope's search method
     submitFormObservable = $scope.$createObservableFunction('search');
 
     // create an observable from the query model
@@ -67,6 +67,7 @@ angular.module('app')
         $location.search('username', username);
       });
 
+    // create a stream from form submit + keyup events
     lastFmResponseStream = Rx.Observable.merge([submitFormObservable, inputObservable])
       .where(function (username) {
         return username && username.length > 0;
