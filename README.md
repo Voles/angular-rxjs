@@ -1,6 +1,8 @@
 # RxJS with Angular
 An experiment using [RxJS](http://reactivex.io/) with Angular.
 
+[Online demo](http://blog.nielsdequeker.be/angular-rxjs/)
+
 #### Prerequisites
 
 * [Node Package Manager](https://npmjs.org/) (NPM)
